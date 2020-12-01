@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VpV-Ap-p5G">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="PT_Root_UI_Light.ttf">
+            <string>PTRootUI-Light</string>
+        </array>
+        <array key="PT_Root_UI_Medium.ttf">
+            <string>PTRootUI-Medium</string>
+        </array>
+        <array key="PT_Root_UI_Regular.ttf">
+            <string>PTRootUI-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--News Details View Controller-->
+        <scene sceneID="dV6-CW-0Ej">
+            <objects>
+                <viewController storyboardIdentifier="NewsDetailsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="VpV-Ap-p5G" customClass="NewsDetailsViewController" customModule="CleanSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zPq-Eh-hOZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z0s-5H-A7Z">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pqc-Nx-gAj">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="790"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Татьяна Боброва" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uZy-7j-Fdp">
+                                                <rect key="frame" x="16" y="24" width="91.5" height="15.5"/>
+                                                <fontDescription key="fontDescription" name="PTRootUI-Regular" family="PT Root UI" pointSize="12"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="28 мая в 12:05" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z7u-tU-YdC">
+                                                <rect key="frame" x="125.5" y="24" width="77.5" height="15.5"/>
+                                                <fontDescription key="fontDescription" name="PTRootUI-Light" family="PT Root UI" pointSize="12"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MainLogo" translatesAutoresizingMaskIntoConstraints="NO" id="xto-XH-xh6" customClass="WebImageViewService" customModule="CleanSwift" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="213" width="375" height="200"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="xto-XH-xh6" secondAttribute="height" multiplier="15:8" id="mzx-Lz-Fke"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o2Q-7g-ULJ">
+                                                <rect key="frame" x="16" y="449" width="343" height="323"/>
+                                                <string key="text">23 мая 2019 года «Яндекс» объявил о запуске системы «умного» дома на основе голосового помощника «Алиса».
+
+Компания показала собственные устройства — розетку, лампочку и универсальный пульт — и пообещала поддержку других производителей: среди них Redmond, Philips и Xiaomi.
+
+Устройствами «умного» дома можно управлять через интернет или голосового помощника. Например, вскипятить воду командой «Алиса, поставь чайник».
+
+«Яндекс» прислал на тестирование:</string>
+                                                <fontDescription key="fontDescription" name="PTRootUI-Regular" family="PT Root UI" pointSize="16"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="«Умный» дом от «Яндекса» под управлением «Алисы»: первый взгляд" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rgm-tI-LVw">
+                                                <rect key="frame" x="16" y="47.5" width="343" height="141.5"/>
+                                                <fontDescription key="fontDescription" name="PTRootUI-Medium" family="PT Root UI" pointSize="28"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="o2Q-7g-ULJ" secondAttribute="bottom" constant="18" id="0D6-i2-s6f"/>
+                                            <constraint firstItem="rgm-tI-LVw" firstAttribute="leading" secondItem="Pqc-Nx-gAj" secondAttribute="leading" constant="16" id="2Ll-Hl-Xbo"/>
+                                            <constraint firstItem="uZy-7j-Fdp" firstAttribute="top" secondItem="Pqc-Nx-gAj" secondAttribute="top" constant="24" id="4ge-6U-IBQ"/>
+                                            <constraint firstItem="rgm-tI-LVw" firstAttribute="top" secondItem="uZy-7j-Fdp" secondAttribute="bottom" constant="8" id="6ax-kA-xVY"/>
+                                            <constraint firstItem="z7u-tU-YdC" firstAttribute="leading" secondItem="uZy-7j-Fdp" secondAttribute="trailing" constant="18" id="LZC-Xm-xln"/>
+                                            <constraint firstAttribute="trailing" secondItem="o2Q-7g-ULJ" secondAttribute="trailing" constant="16" id="LZk-cI-15g"/>
+                                            <constraint firstItem="o2Q-7g-ULJ" firstAttribute="leading" secondItem="Pqc-Nx-gAj" secondAttribute="leading" constant="16" id="Le2-1I-K6c"/>
+                                            <constraint firstAttribute="trailing" secondItem="xto-XH-xh6" secondAttribute="trailing" id="Xt5-Ul-TEP"/>
+                                            <constraint firstItem="z7u-tU-YdC" firstAttribute="top" secondItem="Pqc-Nx-gAj" secondAttribute="top" constant="24" id="Yy1-tL-Ci9"/>
+                                            <constraint firstItem="xto-XH-xh6" firstAttribute="top" secondItem="rgm-tI-LVw" secondAttribute="bottom" constant="24" id="ZAd-NS-438"/>
+                                            <constraint firstAttribute="trailing" secondItem="rgm-tI-LVw" secondAttribute="trailing" constant="16" id="avv-8m-qBV"/>
+                                            <constraint firstItem="o2Q-7g-ULJ" firstAttribute="top" secondItem="xto-XH-xh6" secondAttribute="bottom" constant="36" id="lmk-ho-TML"/>
+                                            <constraint firstItem="xto-XH-xh6" firstAttribute="leading" secondItem="Pqc-Nx-gAj" secondAttribute="leading" id="qXF-lz-WOm"/>
+                                            <constraint firstItem="uZy-7j-Fdp" firstAttribute="leading" secondItem="Pqc-Nx-gAj" secondAttribute="leading" constant="16" id="zBs-Xm-Jb7"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Pqc-Nx-gAj" firstAttribute="width" secondItem="z0s-5H-A7Z" secondAttribute="width" id="Cvv-QN-OoO"/>
+                                    <constraint firstItem="Pqc-Nx-gAj" firstAttribute="leading" secondItem="z0s-5H-A7Z" secondAttribute="leading" id="DE7-MZ-If0"/>
+                                    <constraint firstItem="Pqc-Nx-gAj" firstAttribute="height" secondItem="z0s-5H-A7Z" secondAttribute="height" priority="250" id="H8k-qE-tC1"/>
+                                    <constraint firstItem="Pqc-Nx-gAj" firstAttribute="top" secondItem="z0s-5H-A7Z" secondAttribute="top" id="Jgc-N7-prw"/>
+                                    <constraint firstAttribute="bottom" secondItem="Pqc-Nx-gAj" secondAttribute="bottom" id="qxR-qe-exC"/>
+                                    <constraint firstAttribute="trailing" secondItem="Pqc-Nx-gAj" secondAttribute="trailing" id="vbi-pB-3Io"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ps6-6x-NnN"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="z0s-5H-A7Z" firstAttribute="bottom" secondItem="ps6-6x-NnN" secondAttribute="bottom" id="5Yl-14-pVZ"/>
+                            <constraint firstItem="z0s-5H-A7Z" firstAttribute="trailing" secondItem="ps6-6x-NnN" secondAttribute="trailing" id="VkM-Qp-s6G"/>
+                            <constraint firstItem="z0s-5H-A7Z" firstAttribute="top" secondItem="ps6-6x-NnN" secondAttribute="top" id="Yj6-4A-Fyo"/>
+                            <constraint firstItem="z0s-5H-A7Z" firstAttribute="leading" secondItem="ps6-6x-NnN" secondAttribute="leading" id="fya-jW-koD"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="detailsAutorLabel" destination="uZy-7j-Fdp" id="dtK-TO-6Uz"/>
+                        <outlet property="detailsDateLabel" destination="z7u-tU-YdC" id="fGV-pB-eOO"/>
+                        <outlet property="detailsImageView" destination="xto-XH-xh6" id="T3v-Ss-74X"/>
+                        <outlet property="detailsTextLabel" destination="o2Q-7g-ULJ" id="1YN-34-Gbs"/>
+                        <outlet property="detailsTitleLabel" destination="rgm-tI-LVw" id="vqQ-bA-roM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z0e-Ha-4Xy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-7.2000000000000002" y="39.130434782608695"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="MainLogo" width="193.5" height="56"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
