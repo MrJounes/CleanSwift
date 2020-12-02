@@ -27,7 +27,7 @@ extension NewsPresenter: NewsPresentationLogic {
         static let autor = "Автор не указан"
         static let date = "Дата не указана"
         static let title = "Заголовок не указан"
-        static let text = ""
+        static let text = "Описание отсутствует"
         static let imageUrl = "https://gobatumi.com/images/noimage.png"
     }
     
@@ -52,7 +52,7 @@ extension NewsPresenter: NewsPresentationLogic {
     
     func presentData(response: News.Something.Response.ResponseType) {
         switch response {
-        case .presentNews(news: let news):
+        case .presentNews(news: let news, recordsArray: var recordsArray):
             let viewModel = news.map { (news) -> NewsCellModel in
                 let newsCellModel = NewsCellModel(newsImage: news.urlToImage ?? DefaultValue.imageUrl,
                                                   newsTitle: news.title ?? DefaultValue.title,
@@ -63,7 +63,14 @@ extension NewsPresenter: NewsPresentationLogic {
                 return newsCellModel
             }
             
-            viewController?.displayData(viewModel: .displayNews(news: viewModel))
+            var index = 0
+                        while index < 4 {
+                            let article = viewModel[index]
+                            recordsArray.append(article)
+                            index = index + 1
+            }
+            
+            viewController?.displayData(viewModel: .displayNews(news: viewModel, recordsArray: recordsArray))
         }
     }
 }

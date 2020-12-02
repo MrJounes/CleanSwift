@@ -67,6 +67,7 @@
                     </label>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="FTz-EH-usQ" secondAttribute="trailing" constant="16" id="9c4-YQ-MXP"/>
                     <constraint firstItem="93F-OQ-S3j" firstAttribute="top" secondItem="w5z-rE-ZHK" secondAttribute="bottom" constant="8" id="BwV-jc-QRe"/>
                     <constraint firstItem="kV9-w2-dfh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="EP1-FM-u5z"/>
                     <constraint firstItem="93F-OQ-S3j" firstAttribute="leading" secondItem="kV9-w2-dfh" secondAttribute="trailing" constant="18" id="GwG-Fw-dGs"/>

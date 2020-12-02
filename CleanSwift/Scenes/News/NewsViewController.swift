@@ -31,6 +31,10 @@ final class NewsViewController: UIViewController {
     private var dataToDisplay = [NewsCellModel]()
     private var dataToRoute: NewsCellModel?
     
+    private var recordsArray = [NewsCellModel]()
+    private var limit = 4
+    private var totalEnetries = 20
+    
     // MARK: - Object lifecycle
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -60,8 +64,9 @@ final class NewsViewController: UIViewController {
         
         self.newsCellDelegate = self
         configureTableView()
+        
         // Do any additional setup after loading the view.
-        interactor?.makeRequest(request: .getNews)
+        interactor?.makeRequest(request: .getNews(recordsArray: recordsArray))
     }
 
     // MARK: - Internal logic
@@ -72,6 +77,30 @@ final class NewsViewController: UIViewController {
         tableView.register( UINib(nibName: "NewsCell", bundle: nil), forCellReuseIdentifier: NewsCell.cellIndetifier)
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         interactor?.getLogo(navController: navigationController, navItem: navigationItem)
+        addLoadMoreButton()
+    }
+    
+    func addLoadMoreButton() {
+            
+        let button = UIButton(frame: CGRect(origin: .zero, size: CGSize(width: self.tableView.frame.width, height: 40)))
+        button.setTitle("Загрузить еще", for: .normal)
+        button.setTitleColor(.black, for: .normal)
+        button.backgroundColor = .white
+        button.addTarget(self, action: #selector(moreButtonClicked(_:)), for: .touchUpInside)
+        self.tableView.tableFooterView = button
+        }
+        
+    @objc func moreButtonClicked(_ sender: UIButton) {
+        if recordsArray.count < totalEnetries && recordsArray.count < totalEnetries + 4{
+            var index = recordsArray.count
+            limit = index + 4
+            while index < limit {
+                let article = self.dataToDisplay[index]
+                recordsArray.append(article)
+                index = index + 1
+            }
+            self.tableView.reloadData()
+        }
     }
 }
 
@@ -80,9 +109,10 @@ extension NewsViewController: NewsDisplayLogic {
     
     func displayData(viewModel: News.Something.ViewModel.ViewModelData){
         switch viewModel {
-        case .displayNews(news: let news):
+        case .displayNews(news: let news, recordsArray: let recordsArray):
             dataToDisplay.removeAll()
             dataToDisplay.append(contentsOf: news)
+            self.recordsArray = recordsArray
             tableView.reloadData()
         }
     }
@@ -113,7 +143,8 @@ extension NewsViewController: UITableViewDelegate {
 // MARK: - UITableViewDataSource
 extension NewsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataToDisplay.count
+        //return dataToDisplay.count
+        return recordsArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

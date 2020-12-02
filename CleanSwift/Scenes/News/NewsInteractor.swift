@@ -26,12 +26,12 @@ extension NewsInteractor: NewsBusinessLogic {
     
     func makeRequest(request: News.Something.Request.RequestType){
         switch request {
-        case .getNews:
+        case .getNews(recordsArray: let recordsArray):
             if service == nil {
                 service = NewsService()
             }
             service?.fetchNews(complition: { (news) in
-                self.presenter?.presentData(response: .presentNews(news: news))
+                self.presenter?.presentData(response: .presentNews(news: news, recordsArray: recordsArray))
             })
         }
     }

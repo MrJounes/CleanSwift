@@ -20,6 +20,7 @@ final class NewsDetailsInteractor: NewsDetailsStoreProtocol {
     
     // MARK: - External vars
     var presenter: NewsDetailsPresentationLogic?
+    var worker: NewsDetailsWorker?
     
     // MARK: - Internal vars
     var dataToDisplay: NewsCellModel?

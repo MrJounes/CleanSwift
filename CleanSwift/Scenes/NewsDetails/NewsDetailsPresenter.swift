@@ -6,7 +6,7 @@
 //  Copyright © 2020 Игорь Дикань. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 protocol NewsDetailsPresentationLogic {
     func presentData(response: NewsDetails.Something.Response.ResponseType)
