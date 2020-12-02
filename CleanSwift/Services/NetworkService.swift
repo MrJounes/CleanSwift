@@ -13,8 +13,11 @@ class NetworkService {
     private init() {}
     static let shared = NetworkService()
     
-    func request(urlString: String, complition: @escaping (Result<Data, Error>) -> Void) {
-        guard let url = URL(string: urlString) else { return }
+    func request(path: String, params: [String : String], complition: @escaping (Result<Data, Error>) -> Void) {
+        var allParams = params
+        allParams["country"] = API.country
+        allParams["apiKey"] = API.apiKey
+        let url = self.url(from: path, params: allParams)
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             DispatchQueue.main.async {
                 if let error = error {
@@ -25,5 +28,14 @@ class NetworkService {
                 complition(.success(data))
             }
         }.resume()
+    }
+    
+    private func url(from path: String, params: [String: String]) -> URL {
+        var components = URLComponents()
+        components.scheme = API.scheme
+        components.host = API.host
+        components.path = path
+        components.queryItems = params.map {  URLQueryItem(name: $0, value: $1) }
+        return components.url!
     }
 }

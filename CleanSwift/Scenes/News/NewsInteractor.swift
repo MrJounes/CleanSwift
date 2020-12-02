@@ -9,8 +9,7 @@
 import UIKit
 
 protocol NewsBusinessLogic {
-    func makeRequest(request: News.Something.Request.RequestType)
-    func getLogo(navController: UINavigationController?, navItem: UINavigationItem)
+    func makeRequest(request: News.Load.Request.RequestType)
 }
 
 final class NewsInteractor {
@@ -19,12 +18,13 @@ final class NewsInteractor {
     var presenter: NewsPresentationLogic?
     var service: NewsService?
     weak var viewController: NewsDisplayLogic?
+
 }
 
 // MARK: - Business logic
 extension NewsInteractor: NewsBusinessLogic {
     
-    func makeRequest(request: News.Something.Request.RequestType){
+    func makeRequest(request: News.Load.Request.RequestType){
         switch request {
         case .getNews(recordsArray: let recordsArray):
             if service == nil {
@@ -33,10 +33,9 @@ extension NewsInteractor: NewsBusinessLogic {
             service?.fetchNews(complition: { (news) in
                 self.presenter?.presentData(response: .presentNews(news: news, recordsArray: recordsArray))
             })
+            
+        case .getLogo(navController: let navController, navItem: let navItem):
+            presenter?.presentData(response: .presentLogo(navController: navController, navItem: navItem))
         }
-    }
-    
-    func getLogo(navController: UINavigationController?, navItem: UINavigationItem) {
-        presenter?.presentLogo(navController: navController, navItem: navItem)
     }
 }

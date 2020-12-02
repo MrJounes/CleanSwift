@@ -15,8 +15,8 @@ class NetworkDataFetcher {
     
     let networkService = NetworkService.shared
     
-    func fetchArticles(urlString: String, response: @escaping (NewsResponseModel?) -> Void) {
-        networkService.request(urlString: urlString) { (result) in
+    func fetchArticles(response: @escaping (NewsResponseModel?) -> Void) {
+        networkService.request(path: API.topHeadlines, params: [:]) { (result) in
             switch result {
             case .success(let data):
                 do {

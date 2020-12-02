@@ -6,25 +6,28 @@
 //  Copyright © 2020 Игорь Дикань. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 enum News {
 // MARK: Use cases
 
-    enum Something {
+    enum Load {
         struct Request {
             enum RequestType {
                 case getNews(recordsArray: [NewsCellModel])
+                case getLogo(navController: UINavigationController?, navItem: UINavigationItem)
             }
         }
         struct Response {
             enum ResponseType {
                 case presentNews(news: [Article], recordsArray: [NewsCellModel])
+                case presentLogo(navController: UINavigationController?, navItem: UINavigationItem)
             }
         }
         struct ViewModel {
             enum ViewModelData {
                 case displayNews(news: [NewsCellModel], recordsArray: [NewsCellModel])
+                case displayLogo
             }
         }
     }

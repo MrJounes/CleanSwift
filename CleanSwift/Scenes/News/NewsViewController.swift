@@ -9,8 +9,7 @@
 import UIKit
 
 protocol NewsDisplayLogic: class {
-    func displayData(viewModel: News.Something.ViewModel.ViewModelData)
-    func displayLogo()
+    func displayData(viewModel: News.Load.ViewModel.ViewModelData)
 }
 
 protocol NewsCellDelegate: class {
@@ -76,7 +75,7 @@ final class NewsViewController: UIViewController {
         tableView.tableFooterView = UIView(frame: .zero)
         tableView.register( UINib(nibName: "NewsCell", bundle: nil), forCellReuseIdentifier: NewsCell.cellIndetifier)
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-        interactor?.getLogo(navController: navigationController, navItem: navigationItem)
+        interactor?.makeRequest(request: .getLogo(navController: navigationController, navItem: navigationItem))
         addLoadMoreButton()
     }
     
@@ -88,7 +87,7 @@ final class NewsViewController: UIViewController {
         button.backgroundColor = .white
         button.addTarget(self, action: #selector(moreButtonClicked(_:)), for: .touchUpInside)
         self.tableView.tableFooterView = button
-        }
+    }
         
     @objc func moreButtonClicked(_ sender: UIButton) {
         if recordsArray.count < totalEnetries && recordsArray.count < totalEnetries + 4{
@@ -107,18 +106,16 @@ final class NewsViewController: UIViewController {
 // MARK: - Display logic
 extension NewsViewController: NewsDisplayLogic {
     
-    func displayData(viewModel: News.Something.ViewModel.ViewModelData){
+    func displayData(viewModel: News.Load.ViewModel.ViewModelData){
         switch viewModel {
         case .displayNews(news: let news, recordsArray: let recordsArray):
             dataToDisplay.removeAll()
             dataToDisplay.append(contentsOf: news)
             self.recordsArray = recordsArray
             tableView.reloadData()
+        case .displayLogo:
+            print(".displayLogo")
         }
-    }
-    
-    func displayLogo() {
-        
     }
 }
 
