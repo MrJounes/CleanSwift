@@ -46,7 +46,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MainLogo" translatesAutoresizingMaskIntoConstraints="NO" id="xto-XH-xh6" customClass="WebImageViewService" customModule="CleanSwift" customModuleProvider="target">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MainLogo" translatesAutoresizingMaskIntoConstraints="NO" id="xto-XH-xh6">
                                                 <rect key="frame" x="0.0" y="213" width="375" height="200"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="xto-XH-xh6" secondAttribute="height" multiplier="15:8" id="mzx-Lz-Fke"/>

@@ -7,16 +7,21 @@
 //
 
 import Foundation
+import UIKit
+import Alamofire
+import SwiftyJSON
 
 class NetworkService {
     
     private init() {}
     static let shared = NetworkService()
     
+    let apiKey = API.apiKey
+    
     func request(path: String, params: [String : String], complition: @escaping (Result<Data, Error>) -> Void) {
         var allParams = params
+        allParams["apiKey"] = apiKey
         allParams["country"] = API.country
-        allParams["apiKey"] = API.apiKey
         let url = self.url(from: path, params: allParams)
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             DispatchQueue.main.async {

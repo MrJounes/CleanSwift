@@ -15,11 +15,11 @@ protocol NewsDetailsDisplayLogic: class {
 final class NewsDetailsViewController: UIViewController {
     
     // MARK: - IBOutlets
-    @IBOutlet weak var detailsAutorLabel: UILabel!
-    @IBOutlet weak var detailsDateLabel: UILabel!
-    @IBOutlet weak var detailsTitleLabel: UILabel!
-    @IBOutlet weak var detailsImageView: WebImageViewService!
-    @IBOutlet weak var detailsTextLabel: UILabel!
+    @IBOutlet private weak var detailsAutorLabel: UILabel!
+    @IBOutlet private weak var detailsDateLabel: UILabel!
+    @IBOutlet private weak var detailsTitleLabel: UILabel!
+    @IBOutlet private weak var detailsImageView: UIImageView!
+    @IBOutlet private weak var detailsTextLabel: UILabel!
     
     // MARK: - External vars
     private(set) var router: (NewsDetailsRoutingLogic & NewsDetailsDataPassingProtocol)?
@@ -65,7 +65,7 @@ final class NewsDetailsViewController: UIViewController {
         detailsAutorLabel.text = data?.newsAutor
         detailsDateLabel.text = data?.newsDate
         detailsTitleLabel.text = data?.newsTitle.uppercased()
-        detailsImageView.set(urlString: data?.newsImage ?? "")
+        detailsImageView.setImage(urlString: data?.newsImage ?? "")
         detailsTextLabel.text = data?.newsText
     }
 }

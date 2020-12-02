@@ -15,6 +15,6 @@ struct API {
     
     static let topHeadlines = "/v2/top-headlines"
     
-    static let country = "ru"
     static let apiKey = "3bf2bcbc726d444ca580f2e0fa6c30be"
+    static let country = "ru"
 }

@@ -12,17 +12,17 @@ import UIKit
 //    func didNewsTap(dataNews: [NewsCellModel])
 //}
 
-class NewsCell: UITableViewCell {
+final class NewsCell: UITableViewCell {
 
     static let cellIndetifier = "NewsCell"
     
     // MARK: - IBOutlets
-    @IBOutlet weak var newsImageView: WebImageViewService!
-    @IBOutlet weak var newsTitleLabel: UILabel!
-    @IBOutlet weak var newsAutorLabel: UILabel!
-    @IBOutlet weak var newsDateLabel: UILabel!
-    @IBOutlet weak var newsShapeImageView: UIImageView!
-    @IBOutlet weak var newsCountLabel: UILabel!
+    @IBOutlet private weak var newsImageView: UIImageView!
+    @IBOutlet private weak var newsTitleLabel: UILabel!
+    @IBOutlet private weak var newsAutorLabel: UILabel!
+    @IBOutlet private weak var newsDateLabel: UILabel!
+    @IBOutlet private weak var newsShapeImageView: UIImageView!
+    @IBOutlet private weak var newsCountLabel: UILabel!
     
     // MARK: - External vars
     private var dataNews: [NewsCellModel]?
@@ -39,7 +39,7 @@ class NewsCell: UITableViewCell {
     }
     
     func setup(data: NewsCellModel) {
-        newsImageView.set(urlString: data.newsImage)
+        newsImageView.setImage(urlString: data.newsImage)
         newsTitleLabel.text = data.newsTitle.uppercased()
         newsAutorLabel.text = data.newsAutor
         newsDateLabel.text = data.newsDate

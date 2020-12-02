@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 protocol NewsDisplayLogic: class {
     func displayData(viewModel: News.Load.ViewModel.ViewModelData)
@@ -66,6 +68,23 @@ final class NewsViewController: UIViewController {
         
         // Do any additional setup after loading the view.
         interactor?.makeRequest(request: .getNews(recordsArray: recordsArray))
+        
+        fetchData()
+    }
+    
+    private func fetchData() {
+        let url = "http://newsapi.org/v2/top-headlines?country=ru&apiKey=3bf2bcbc726d444ca580f2e0fa6c30be"
+        DispatchQueue.main.async {
+            AF.request(url).responseJSON { (response) in
+                switch response.result {
+                case .success(let value):
+                    let data = JSON(value)
+                    print(data["articles"])
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
+        }
     }
 
     // MARK: - Internal logic
