@@ -75,6 +75,9 @@ final class NewsViewController: UIViewController {
         tableView.dataSource = self
         tableView.tableFooterView = UIView(frame: .zero)
         tableView.register( UINib(nibName: "NewsCell", bundle: nil), forCellReuseIdentifier: NewsCell.cellIndetifier)
+        
+        tableView.register(NewsCodeCell.self, forCellReuseIdentifier: NewsCodeCell.reuseId)
+        
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         interactor?.makeRequest(request: .getLogo(navController: navigationController, navItem: navigationItem))
         addLoadMoreButton()
@@ -144,12 +147,16 @@ extension NewsViewController: UITableViewDelegate {
 // MARK: - UITableViewDataSource
 extension NewsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //return dataToDisplay.count
         return recordsArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: NewsCell.cellIndetifier, for: indexPath) as? NewsCell else {
+//        guard let cell = tableView.dequeueReusableCell(withIdentifier: NewsCell.cellIndetifier, for: indexPath) as? NewsCell else {
+//            return UITableViewCell()
+//        }
+//        cell.setup(data: dataToDisplay[indexPath.row])
+//        return cell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: NewsCodeCell.reuseId, for: indexPath) as? NewsCodeCell else {
             return UITableViewCell()
         }
         cell.setup(data: dataToDisplay[indexPath.row])
