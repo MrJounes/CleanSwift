@@ -18,7 +18,6 @@ final class DateConversionService {
     func getDate(dateString: String?) -> String {
         guard let dateString = dateString else { return defaultValue }
         let formatter = DateFormatter()
-        formatter.locale = Locale(identifier: "ru_RU")
         formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss'Z'"
         guard let date = formatter.date(from: dateString) else { return defaultValue }
         formatter.dateFormat = "dd MMMM 'в' HH:mm"
