@@ -10,12 +10,9 @@ import Foundation
 
 final class NewsService {
     
-    func fetchNews(complition: @escaping ([Article]) -> Void) {
-        let defaultValue: [Article] = []
-
-        NetworkDataFetcher.shared.fetchArticles { (newsResponseModel) in
-            complition(newsResponseModel?.articles ?? defaultValue)
+    func fetchNews(complition: @escaping (NewsResponseModel) -> Void) {
+        NetworkService.shared.fetchNews(paht: API.topHeadlines, params: [:]) { (news) in
+            complition(news)
         }
-        
     }
 }

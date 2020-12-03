@@ -20,7 +20,6 @@ final class NewsDetailsPresenter {
 
 // MARK: - Presentation logic
 extension NewsDetailsPresenter: NewsDetailsPresentationLogic {
-    
     func presentData(response: NewsDetails.Something.Response.ResponseType) {
         switch response {
         case .presentDetails(details: let details):

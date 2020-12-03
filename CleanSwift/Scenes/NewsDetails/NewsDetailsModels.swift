@@ -13,8 +13,7 @@
 import UIKit
 
 enum NewsDetails {
-// MARK: Use cases
-
+    
     enum Something {
         struct Request {
             enum RequestType {

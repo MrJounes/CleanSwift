@@ -6,9 +6,8 @@
 //  Copyright © 2020 Игорь Дикань. All rights reserved.
 //
 
+import Foundation
 import UIKit
-import Alamofire
-import SwiftyJSON
 
 protocol NewsDisplayLogic: class {
     func displayData(viewModel: News.Load.ViewModel.ViewModelData)
@@ -67,24 +66,7 @@ final class NewsViewController: UIViewController {
         configureTableView()
         
         // Do any additional setup after loading the view.
-        interactor?.makeRequest(request: .getNews(recordsArray: recordsArray))
         
-        fetchData()
-    }
-    
-    private func fetchData() {
-        let url = "http://newsapi.org/v2/top-headlines?country=ru&apiKey=3bf2bcbc726d444ca580f2e0fa6c30be"
-        DispatchQueue.main.async {
-            AF.request(url).responseJSON { (response) in
-                switch response.result {
-                case .success(let value):
-                    let data = JSON(value)
-                    print(data["articles"])
-                case .failure(let error):
-                    print(error.localizedDescription)
-                }
-            }
-        }
     }
 
     // MARK: - Internal logic
@@ -96,10 +78,14 @@ final class NewsViewController: UIViewController {
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         interactor?.makeRequest(request: .getLogo(navController: navigationController, navItem: navigationItem))
         addLoadMoreButton()
+        fetchNews()
     }
     
-    func addLoadMoreButton() {
-            
+    private func fetchNews() {
+        interactor?.makeRequest(request: .getNews(recordsArray: recordsArray))
+    }
+    
+    private func addLoadMoreButton() {
         let button = UIButton(frame: CGRect(origin: .zero, size: CGSize(width: self.tableView.frame.width, height: 40)))
         button.setTitle("Загрузить еще", for: .normal)
         button.setTitleColor(.black, for: .normal)
@@ -124,7 +110,6 @@ final class NewsViewController: UIViewController {
 
 // MARK: - Display logic
 extension NewsViewController: NewsDisplayLogic {
-    
     func displayData(viewModel: News.Load.ViewModel.ViewModelData){
         switch viewModel {
         case .displayNews(news: let news, recordsArray: let recordsArray):
@@ -133,7 +118,7 @@ extension NewsViewController: NewsDisplayLogic {
             self.recordsArray = recordsArray
             tableView.reloadData()
         case .displayLogo:
-            print(".displayLogo")
+            break
         }
     }
 }

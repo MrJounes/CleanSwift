@@ -23,7 +23,6 @@ extension NewsRouter: NewsRoutingLogic {
     func navigateToDetail(data: NewsCellModel) {
         let storyboard = UIStoryboard.init(name: "NewsDetailsViewController", bundle: nil)
         guard let newsDetailsVC = storyboard.instantiateViewController(identifier: "NewsDetailsViewController") as? NewsDetailsViewController else { return }
-        
         newsDetailsVC.router?.dataStore?.dataToDisplay = data
         viewController?.navigationController?.pushViewController(newsDetailsVC, animated: true)
     }

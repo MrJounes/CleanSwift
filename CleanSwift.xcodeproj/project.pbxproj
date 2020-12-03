@@ -14,7 +14,6 @@
 		63010AFE2573B40000DF83C4 /* PT_Root_UI_Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 63010AFA2573B40000DF83C4 /* PT_Root_UI_Bold.ttf */; };
 		632754EA25737F1900B91EA9 /* NewsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632754E925737F1900B91EA9 /* NewsWorker.swift */; };
 		632754EF25739F3300B91EA9 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632754EE25739F3300B91EA9 /* NetworkService.swift */; };
-		632754F125739F4600B91EA9 /* NetworkDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632754F025739F4600B91EA9 /* NetworkDataFetcher.swift */; };
 		632754F525739FEF00B91EA9 /* DateConversionServise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632754F425739FEF00B91EA9 /* DateConversionServise.swift */; };
 		636F0D952572747600C9D82F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636F0D942572747600C9D82F /* AppDelegate.swift */; };
 		636F0D972572747600C9D82F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636F0D962572747600C9D82F /* SceneDelegate.swift */; };
@@ -39,7 +38,6 @@
 		D77853A9257683EB00460797 /* NewsDetailsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77853A8257683EB00460797 /* NewsDetailsWorker.swift */; };
 		D7803D41257791B500B34B9E /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7803D40257791B500B34B9E /* API.swift */; };
 		D7CD2C872577AB5E0011E118 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CD2C862577AB5E0011E118 /* UIImageView.swift */; };
-		D7D3752F2577C46E0074FA04 /* AlamofireNetworkServise.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D3752E2577C46E0074FA04 /* AlamofireNetworkServise.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,7 +49,6 @@
 		63010AFA2573B40000DF83C4 /* PT_Root_UI_Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PT_Root_UI_Bold.ttf; sourceTree = "<group>"; };
 		632754E925737F1900B91EA9 /* NewsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsWorker.swift; sourceTree = "<group>"; };
 		632754EE25739F3300B91EA9 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
-		632754F025739F4600B91EA9 /* NetworkDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetcher.swift; sourceTree = "<group>"; };
 		632754F425739FEF00B91EA9 /* DateConversionServise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateConversionServise.swift; sourceTree = "<group>"; };
 		636F0D912572747600C9D82F /* CleanSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CleanSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		636F0D942572747600C9D82F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -79,7 +76,6 @@
 		D77853A8257683EB00460797 /* NewsDetailsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailsWorker.swift; sourceTree = "<group>"; };
 		D7803D40257791B500B34B9E /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		D7CD2C862577AB5E0011E118 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
-		D7D3752E2577C46E0074FA04 /* AlamofireNetworkServise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireNetworkServise.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,14 +118,14 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
-		63010AFF2573B46100DF83C4 /* SupportingFiles */ = {
+		63010AFF2573B46100DF83C4 /* Resourses */ = {
 			isa = PBXGroup;
 			children = (
 				63010AF62573B40000DF83C4 /* Fonts */,
 				636F0D9D2572747900C9D82F /* Assets.xcassets */,
 				636F0DA22572747900C9D82F /* Info.plist */,
 			);
-			path = SupportingFiles;
+			path = Resourses;
 			sourceTree = "<group>";
 		};
 		632754ED25739F2000B91EA9 /* Services */ = {
@@ -137,9 +133,7 @@
 			children = (
 				D7803D40257791B500B34B9E /* API.swift */,
 				632754EE25739F3300B91EA9 /* NetworkService.swift */,
-				632754F025739F4600B91EA9 /* NetworkDataFetcher.swift */,
 				632754F425739FEF00B91EA9 /* DateConversionServise.swift */,
-				D7D3752E2577C46E0074FA04 /* AlamofireNetworkServise.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -165,13 +159,13 @@
 		636F0D932572747600C9D82F /* CleanSwift */ = {
 			isa = PBXGroup;
 			children = (
-				D7CD2C852577AB040011E118 /* Extension */,
 				636F0D942572747600C9D82F /* AppDelegate.swift */,
 				636F0D962572747600C9D82F /* SceneDelegate.swift */,
 				636F0D9F2572747900C9D82F /* LaunchScreen.storyboard */,
 				636F0DA82572751200C9D82F /* Scenes */,
 				632754ED25739F2000B91EA9 /* Services */,
-				63010AFF2573B46100DF83C4 /* SupportingFiles */,
+				D7CD2C852577AB040011E118 /* Extension */,
+				63010AFF2573B46100DF83C4 /* Resourses */,
 			);
 			path = CleanSwift;
 			sourceTree = "<group>";
@@ -367,13 +361,11 @@
 				636F0D952572747600C9D82F /* AppDelegate.swift in Sources */,
 				636F0DC0257289B100C9D82F /* NewsResponseModel.swift in Sources */,
 				63FA8DB82572BB0D00A542CA /* NewsDetailsInteractor.swift in Sources */,
-				D7D3752F2577C46E0074FA04 /* AlamofireNetworkServise.swift in Sources */,
 				63FA8DBA2572BB2300A542CA /* NewsDetailsPresenter.swift in Sources */,
 				636F0DAF2572768400C9D82F /* NewsPresenter.swift in Sources */,
 				632754EA25737F1900B91EA9 /* NewsWorker.swift in Sources */,
 				63FA8DBC2572BB5B00A542CA /* NewsDetailsRouter.swift in Sources */,
 				D77853A225767ECC00460797 /* NewsModel.swift in Sources */,
-				632754F125739F4600B91EA9 /* NetworkDataFetcher.swift in Sources */,
 				636F0D972572747600C9D82F /* SceneDelegate.swift in Sources */,
 				63FA8DB12572B85100A542CA /* NewsRouter.swift in Sources */,
 				632754F525739FEF00B91EA9 /* DateConversionServise.swift in Sources */,
@@ -525,7 +517,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AW7PB72PXH;
-				INFOPLIST_FILE = CleanSwift/SupportingFiles/Info.plist;
+				INFOPLIST_FILE = CleanSwift/Resourses/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -544,7 +536,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AW7PB72PXH;
-				INFOPLIST_FILE = CleanSwift/SupportingFiles/Info.plist;
+				INFOPLIST_FILE = CleanSwift/Resourses/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -9,8 +9,7 @@
 import UIKit
 
 enum News {
-// MARK: Use cases
-
+    
     enum Load {
         struct Request {
             enum RequestType {
@@ -20,7 +19,7 @@ enum News {
         }
         struct Response {
             enum ResponseType {
-                case presentNews(news: [Article], recordsArray: [NewsCellModel])
+                case presentNews(news: NewsResponseModel, recordsArray: [NewsCellModel])
                 case presentLogo(navController: UINavigationController?, navItem: UINavigationItem)
             }
         }

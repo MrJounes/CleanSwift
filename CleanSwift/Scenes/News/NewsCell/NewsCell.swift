@@ -24,9 +24,6 @@ final class NewsCell: UITableViewCell {
     @IBOutlet private weak var newsShapeImageView: UIImageView!
     @IBOutlet private weak var newsCountLabel: UILabel!
     
-    // MARK: - External vars
-    private var dataNews: [NewsCellModel]?
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

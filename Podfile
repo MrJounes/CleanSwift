@@ -7,7 +7,6 @@ target 'CleanSwift' do
 
 pod 'Kingfisher'
 pod 'Alamofire'
-pod 'SwiftyJSON'
 
   # Pods for CleanSwift
 

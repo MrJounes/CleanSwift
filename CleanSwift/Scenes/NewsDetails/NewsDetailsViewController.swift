@@ -54,25 +54,28 @@ final class NewsDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Статья"
         // Do any additional setup after loading the view.
-        interactor?.makeRequest(request: .fetchDetails)
+        fetchDetails()
         configureDetails(data: detailsData)
     }
     
     // MARK: - Internal logic
     private func configureDetails(data: NewsCellModel?) {
+        title = "Статья"
         detailsAutorLabel.text = data?.newsAutor
         detailsDateLabel.text = data?.newsDate
         detailsTitleLabel.text = data?.newsTitle.uppercased()
         detailsImageView.setImage(urlString: data?.newsImage ?? "")
         detailsTextLabel.text = data?.newsText
     }
+    
+    private func fetchDetails() {
+        interactor?.makeRequest(request: .fetchDetails)
+    }
 }
 
 // MARK: - Display logic
 extension NewsDetailsViewController: NewsDetailsDisplayLogic {
-    
     func displayData(data: NewsDetails.Something.ViewModel.ViewModelData) {
         switch data {
         case .displayDetails(details: let details):

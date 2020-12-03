@@ -8,7 +8,7 @@
 
 import Foundation
 
-class DateConversionService {
+final class DateConversionService {
     
     private init() {}
     static let shared = DateConversionService()
@@ -20,8 +20,8 @@ class DateConversionService {
         let formatter = DateFormatter()
         formatter.locale = Locale(identifier: "ru_RU")
         formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss'Z'"
-        let date = formatter.date(from: dateString)
+        guard let date = formatter.date(from: dateString) else { return defaultValue }
         formatter.dateFormat = "dd MMMM 'в' HH:mm"
-        return formatter.string(from: date!)
+        return formatter.string(from: date)
     }
 }

@@ -29,7 +29,6 @@ final class NewsDetailsInteractor: NewsDetailsStoreProtocol {
 
 // MARK: - Business logic
 extension NewsDetailsInteractor: NewsDetailsBusinessLogic {
-    
     func makeRequest(request: NewsDetails.Something.Request.RequestType) {
         switch request {
         case .fetchDetails:
